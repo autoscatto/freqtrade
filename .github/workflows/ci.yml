@@ -169,7 +169,7 @@ jobs:
         export TA_INCLUDE_PATH=${HOME}/dependencies/include
         echo "Python version"
         python --version
-        python -c "import distutils;print(distutils.util.get_platform())"
+        python -c "import sysconfig;print(sysconfig.get_platform())"
         pip install -r requirements-dev.txt
         pip install -e .
 
