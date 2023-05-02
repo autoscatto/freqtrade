@@ -169,9 +169,8 @@ jobs:
         export TA_INCLUDE_PATH=${HOME}/dependencies/include
         echo "Python version"
         python --version
-        set
         python -c "import sysconfig;print(sysconfig.get_platform())"
-        pip show packaging
+        python -c "from pip._vendor.distlib.util import get_host_platform; print(get_host_platform())"
         pip install -r requirements-dev.txt
         pip install -e .
 
